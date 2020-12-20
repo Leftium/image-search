@@ -1,14 +1,44 @@
 <script type='text/coffeescript'>
-    export name = null
-    console.log 'Hello Svelte-CoffeeScript!'
+    queryInput = null
+
+    urlRE = RegExp '^http', 'i'
+
+    handleKeyDown = (e) ->
+        console.log 'Key down'
+        if e.key is 'Enter'
+            e.preventDefault()
+            handleClickGoogleImages e
+
+    handleClickGoogleImages = (e) ->
+        console.log queryInput.value
+        query = queryInput.value.trim()
+
+        if urlRE.test query
+            console.log 'URL detected'
+            window.open "http://images.google.com/searchbyimage?image_url=#{query}", '_blank'
+        else
+            window.open "https://www.google.com/search?tbm=isch&q=#{query}", '_blank'
+
+
+    handleClickYandexImages = (e) ->
+        console.log queryInput.value
+        query = queryInput.value.trim()
+
+        if urlRE.test query
+            console.log 'URL detected'
+            window.open "https://yandex.com/images/search?rpt=imageview&url=#{query}", '_blank'
+        else
+            window.open "https://yandex.com/images/search?text=#{query}", '_blank'
 </script>
 
 <template lang=pug>
 main
-    h1 Hello {name}!
-    p.
-        Visit the #[a(href="https://svelte.dev/tutorial") Svelte tutorial]
-        to learn how to build Svelte apps.
+    div: input(bind:this='{queryInput}' on:keydown='{handleKeyDown}')
+    div
+        button(on:click='{handleClickGoogleImages}') Google Images
+        button(on:click='{handleClickYandexImages}') Yandex Images
+
+
 </template>
 
 <style>
@@ -19,11 +49,8 @@ main
         margin: 0 auto;
     }
 
-    h1 {
-        color: #ff3e00;
-        text-transform: uppercase;
-        font-size: 4em;
-        font-weight: 100;
+    input {
+        width: 100%;
     }
 
     @media (min-width: 640px) {
