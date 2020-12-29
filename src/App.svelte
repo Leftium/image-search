@@ -88,6 +88,10 @@ main
         button(on:click='{handleClickPexels}') Pexels
         button(on:click='{handleClickStockUnlimited}') StockUnlimited
         button(on:click='{handleClickYayImages}') YayImages
+    div
+        span Tip: if the 'Everything!' button does not launch all image searches, 
+        a(target='_blank' href='https://www.businessinsider.co.za/how-to-allow-pop-ups-in-google-chrome-2') allow "Popups and Redirects" 
+        span from the address bar.
     hr
     h2 Image Training
     ul
