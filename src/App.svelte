@@ -88,16 +88,19 @@ main
         button(on:click='{handleClickPexels}') Pexels
         button(on:click='{handleClickStockUnlimited}') StockUnlimited
         button(on:click='{handleClickYayImages}') YayImages
-
+    hr
+    h2 Image Training
+    ul
+        li: a(href='https://ultimatefreedom667.workplace.com/groups/2339716709597108/permalink/2472686242966820') Easy Ad Creation + Variations with befunky.
+        li: a(href='https://innercircle.ultimatefreedom.com/week-4-ad-image-tactic') Week 4 – Ad Image Tactic
+        li: a(href='https://innercircle.ultimatefreedom.com/week-64-image-ad-strategies-with-chris-reader-les-denton') Week 64 – Image Ad Strategies With Chris Reader and Les Denton 
 
 </template>
 
 <style>
     main {
-        text-align: center;
         padding: 1em;
         max-width: 240px;
-        margin: 0 auto;
     }
 
     input {
